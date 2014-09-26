@@ -1,6 +1,7 @@
 pos-web
 =======
 Step: 
+
 1. Clone dulu di local: https://github.com/ustadho/pos-web.git
 2. Buat database **pos_web**
 3. Pastikan ada role didatabase dengan nama: **test**, password **test**
