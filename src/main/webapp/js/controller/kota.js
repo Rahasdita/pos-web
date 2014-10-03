@@ -8,7 +8,7 @@
  * Controller of the belajarYeomanApp
  */
 angular.module('posApp')
-        .controller('ItemKategoriCtrl', function($scope, ItemKategoriService) {
+        .controller('KotaCtrl', function($scope, KotaService) {
             $scope.search = "";
             $scope.oldSearch = "";
             $scope.paging = {
@@ -18,7 +18,7 @@ angular.module('posApp')
 //            document.getElementById('search').focus();
             $scope.reloadData = function() {
 //                $scope.paging.currentPage = $scope.search != $scope.oldSearch ? 1 : $scope.currentPage;
-                $scope.dataPage = ItemKategoriService.query($scope.search, $scope.paging.currentPage, function() {
+                $scope.dataPage = KotaService.query($scope.search, $scope.paging.currentPage, function() {
                     $scope.paging.maxSize = ($scope.dataPage.size);
                     $scope.paging.totalItems = $scope.dataPage.totalElements;
                     $scope.paging.currentPage = parseInt($scope.dataPage.number) + 1;
@@ -30,10 +30,10 @@ angular.module('posApp')
             $scope.reloadData();
 //            $scope.$watch('paging.currentPage', $scope.reloadData, true);
             $scope.edit = function(x) {
-                $scope.formTitle="Edit Item Kategori";
+                $scope.formTitle="Edit Kota";
                 
                 if (x.id) {
-                    ItemKategoriService.get(x.id).success(function(data){
+                    KotaService.get(x.id).success(function(data){
                         $scope.currentRecord=data;
                         $scope.original = angular.copy($scope.currentRecord);
                         $('#formModal').modal('show');
@@ -47,7 +47,7 @@ angular.module('posApp')
             };
 
             $scope.clear = function() {
-                $scope.formTitle="Tambah Item Kategori";
+                $scope.formTitle="Tambah Kota";
                 $scope.currentRecord = null;
                 $scope.original = null;
                 $scope.isNameExists = false;
@@ -58,9 +58,9 @@ angular.module('posApp')
 
             
             $scope.remove = function(x) {
-                bootbox.confirm('Anda yakin untuk mengahapus kategori[' + x.nama + '] ?', function(result) {
+                bootbox.confirm('Anda yakin untuk mengahapus kota[' + x.nama + '] ?', function(result) {
                     if (result) {
-                        ItemKategoriService.remove(x).success(function() {
+                        KotaService.remove(x).success(function() {
                             $scope.clear();
                         });
                     }
@@ -68,14 +68,14 @@ angular.module('posApp')
             };
 
             $scope.save = function() {
-                ItemKategoriService.findByNama($scope.currentRecord.nama).success(function(data) {
+                KotaService.findByNama($scope.currentRecord.nama).success(function(data) {
                     if (data && (data.id !== $scope.currentRecord.id)) {
                         $scope.isNameExists = true;
                         return;
                     } else {
-                        ItemKategoriService.save($scope.currentRecord).success(function() {
+                        KotaService.save($scope.currentRecord).success(function() {
                             $('#formModal').modal('hide');
-                            bootbox.alert('Simpan kategori item sukses ');
+                            bootbox.alert('Simpan kota sukses ');
                             $scope.clear();
                         });
                     }

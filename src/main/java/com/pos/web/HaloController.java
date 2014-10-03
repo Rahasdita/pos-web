@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.pos.controller;
+package com.pos.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

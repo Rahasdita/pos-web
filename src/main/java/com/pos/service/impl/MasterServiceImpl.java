@@ -22,19 +22,5 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class MasterServiceImpl implements MasterService{
-    @Autowired
-    ItemKategoriDao itemKategoriDao;
-
-    public void simpan(ItemKategori ik) {
-        itemKategoriDao.save(ik);
-    }
-
-    public Page<ItemKategori> listAll(Pageable pageable) {
-        return itemKategoriDao.findAll(pageable);
-    }
-
-    public void delete(ItemKategori ik) {
-        itemKategoriDao.delete(ik);
-    }
     
 }

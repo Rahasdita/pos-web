@@ -1,0 +1,31 @@
+<div>
+    <h1>Penjualan</h1>
+    <div class="panel panel-title">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label class="control-label" for="relasi">Pelanggan</label>
+                </div>
+                <div class="col-sm-5">
+                    <p class="input-group">
+                        <input type="text" class="form-control" 
+                               ng-model="currentData.relasi.id" name="relasi"
+                               close-text="Close" id="relasi" 
+                               required/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openDPStartDate($event)"><i class="glyphicon glyphicon-search"></i></button>
+                        </span>
+                    </p>
+
+                </div>
+                <span style="float:right; color:white" class="help-block label label-danger" ng-show="formRate.txtStartDate.$error.required">
+                    This Field is Required
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            Kanan
+        </div>
+    </div>
+</div>
+

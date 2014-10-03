@@ -24,14 +24,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 public class TestItemKategori {
     @Autowired 
-    MasterService service;
+    ItemKategoriDao service;
     
     @Test
     public void simpan(){
         ItemKategori i=new ItemKategori();
         i.setNama("ROKOK");
         i.setKeterangan("");
-        service.simpan(i);
+        service.save(i);
     }
     
 }

@@ -20,9 +20,13 @@ angular
         templateUrl: 'views/master/item-kategori.html',
         controller: 'ItemKategoriCtrl'
       })
-      .when('/transaksi/opd', {
-        templateUrl: 'views/transaksi/opd.html',
-        controller: 'MainCtrl'
+      .when('/master/kota', {
+        templateUrl: 'views/master/kota.html',
+        controller: 'KotaCtrl'
+      })
+      .when('/transaksi/penjualan', {
+        templateUrl: 'views/transaksi/penjualan.html',
+        controller: 'ArInvCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -33,6 +37,24 @@ angular
         controller: 'ReportIpdCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+//        redirectTo: 'views/404.html'
+          templateUrl: 'views/404.html',
       });
-  });
+  })
+  .directive('onEnter',function() {
+
+  var linkFn = function(scope,element,attrs) {
+    element.bind("keypress", function(event) {
+      if(event.which === 13) {
+        scope.$apply(function() {
+      scope.$eval(attrs.onEnter);
+        });
+        event.preventDefault();
+      }
+    });
+  };
+
+  return {
+    link:linkFn
+  };
+});

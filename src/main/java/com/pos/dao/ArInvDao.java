@@ -4,16 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.pos.service;
+package com.pos.dao;
 
-import com.pos.model.ItemKategori;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import com.pos.model.ArInv;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
  *
  * @author faheem
  */
-public interface MasterService {
+public interface ArInvDao extends PagingAndSortingRepository<ArInv, String>{
     
 }

@@ -19,7 +19,7 @@
     </mvc:annotation-driven>
     <mvc:default-servlet-handler />
 
-    <context:component-scan base-package="com.pos.controller" />
+    <context:component-scan base-package="com.pos.web" />
     
     <bean id="jasperViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
         <property name="location" value="classpath:jasper-views.xml"/>

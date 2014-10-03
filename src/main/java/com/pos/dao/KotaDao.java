@@ -7,6 +7,7 @@
 package com.pos.dao;
 
 import com.pos.model.ItemKategori;
+import com.pos.model.Kota;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -17,11 +18,10 @@ import org.springframework.data.repository.query.Param;
  *
  * @author faheem
  */
-public interface ItemKategoriDao extends PagingAndSortingRepository<ItemKategori, Integer>{
-    @Query("from ItemKategori k where upper(k.nama) like upper(:search) ")
-    public Page<ItemKategori> filter(@Param("search") String search, Pageable pageable);
+
+public interface KotaDao extends PagingAndSortingRepository<Kota, Integer>{
+    @Query("from Kota k where upper(k.nama) like upper(:search) ")
+    public Page<Kota> filter(@Param("search") String search, Pageable pageable);
     
-    public ItemKategori findByNama(String nama);
-    
-    
+    public Kota findByNama(String nama);
 }

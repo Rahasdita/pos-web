@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>JavaHIS - Reporting</title>
+        <title>POS - Aplikasi Penjualan & Inventori</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/app.css" rel="stylesheet">
         
@@ -31,7 +31,7 @@ and open the template in the editor.
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">JavaHIS - Reporting</a>
+                        <a class="navbar-brand" href="#">Point of Sales</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
@@ -40,37 +40,43 @@ and open the template in the editor.
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#/master/item-kategori">Item Kategori</a></li>
-                                    <li><a href="#/master/item-kategori">Item</a></li>
+                                    <li><a href="#/master/item">Item</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#/master/pelanggan">Pelanggan</a></li>
-                                    <li><a href="#/master/supplier">Supplier</a></li>
+                                    <li><a href="#/master/relasi">Relasi</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#/master/kota">Kota</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#/about">About</a></li>
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown">Transaksi <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#/transaksi/opd">OPD</a></li>
-                                    <li><a href="#">Rawat Jalan</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#/transaksi/penjualan">Penjualan</a></li>
+                                    <li><a href="#/transaksi/pembelian">Pembelian</a></li>
                                     <li class="divider"></li>
-                                    <li class="dropdown-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <li><a href="#/transaksi/retur-penjualan">Retur Penjualan</a></li>
+                                    <li><a href="#/transaksi/retur-pembelian">Retur Pembelian</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">Persediaan <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#/stok/penerimaan">Penerimaan Lain</a></li>
+                                    <li><a href="#/stok/pengeluaran">Pengeluaran Lain</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#/stok/mutasi">Mutasi Stok</a></li>
+                                    <li><a href="#/stok/stok-opname">Stok Opname</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown">Report <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#/report/ipd">Rawat Inap</a></li>
-                                    <li><a href="#">Rawat Jalan</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <li><a href="#/report/ipd">Persediaan</a></li>
+                                    <li><a href="#">Penjualan</a></li>
+                                    <li><a href="#">Pembelian</a></li>
                                 </ul>
                             </li>
+                            <li><a href="#/about">About</a></li>
+                            
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -79,8 +85,8 @@ and open the template in the editor.
         </div>
         <div ng-view="" class="container"></div>
         
-        <script src="lib/jquery.min.js"></script>
-        <script src="lib/bootstrap.min.js"></script>
+        <script src="lib/jquery-1.8.min.js"></script>
+        <script src="lib/bootstrap-3.0.2.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="lib/ie10-viewport-bug-workaround.js"></script>
         <script src="lib/angular/angular.js"></script>
@@ -101,8 +107,12 @@ and open the template in the editor.
         <script src="js/controller/about.js"></script>
         <script src="js/controller/reportIpd.js"></script>
         <script src="js/controller/item-kategori.js"></script>
+        <script src="js/controller/kota.js"></script>
+        <script src="js/controller/ar-inv.js"></script>
         
         <!--        service-->
         <script src="js/service/item-kategori-service.js"></script>
+        <script src="js/service/kota-service.js"></script>
+        <script src="js/service/ar-inv-service.js"></script>
     </body>
 </html>

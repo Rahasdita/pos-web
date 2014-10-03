@@ -8,7 +8,7 @@
  * Controller of the belajarYeomanApp
  */
 angular.module('posApp')
-        .controller('ItemKategoriCtrl', function($scope, ItemKategoriService) {
+        .controller('ArInvCtrl', function($scope, ItemKategoriService) {
             $scope.search = "";
             $scope.oldSearch = "";
             $scope.paging = {
@@ -27,7 +27,7 @@ angular.module('posApp')
                     
             };
 
-            $scope.reloadData();
+//            $scope.reloadData();
 //            $scope.$watch('paging.currentPage', $scope.reloadData, true);
             $scope.edit = function(x) {
                 $scope.formTitle="Edit Item Kategori";

@@ -4,16 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.pos.service;
-
-import com.pos.model.ItemKategori;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+package com.pos.model;
 
 /**
  *
  * @author faheem
  */
-public interface MasterService {
-    
+public enum ItemType {
+    INVENTORY, //Jika termasuk kategori persediaan
+    NON_INVENTORY// Non persediaan seperti kresek, tali rafia dll.
 }

@@ -4,16 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.pos.service;
-
-import com.pos.model.ItemKategori;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+package com.pos.model;
 
 /**
  *
  * @author faheem
  */
-public interface MasterService {
-    
+public enum TrxType {
+    PJL, //Penjualan
+    RJL, //Retur Penjualan
+    PBL, //Pembelian
+    RBL, //Retur Pembelian
 }
