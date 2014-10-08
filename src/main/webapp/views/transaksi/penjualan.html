@@ -1,31 +1,37 @@
-<div>
+<div id="wrapper">
     <h1>Penjualan</h1>
-    <div class="panel panel-title">
-        <div class="col-lg-6">
-            <div class="form-group">
-                <div class="col-sm-4">
-                    <label class="control-label" for="relasi">Pelanggan</label>
-                </div>
-                <div class="col-sm-5">
-                    <p class="input-group">
-                        <input type="text" class="form-control" 
-                               ng-model="currentData.relasi.id" name="relasi"
-                               close-text="Close" id="relasi" 
-                               required/>
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openDPStartDate($event)"><i class="glyphicon glyphicon-search"></i></button>
-                        </span>
-                    </p>
 
+    <div class="row col-md-12"> 
+        <div class="col-lg-8" >
+            <div class="col-xs-12">
+                <label class="col-xs-3">No. Transaksi</label>
+                <div class="col-xs-6" >
+                    <input type="text" class="form-control"/>
                 </div>
-                <span style="float:right; color:white" class="help-block label label-danger" ng-show="formRate.txtStartDate.$error.required">
-                    This Field is Required
-                </span>
+            </div>
+            <div class="col-xs-12">
+                <label class="col-xs-3">Tanggal</label>
+                <div class="col-xs-6" >
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <label class="col-xs-3">Pelanggan</label>
+                <div class="col-xs-8 input-group custom-search-form wrapper" >
+                    <input type="text" class="form-control"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="reloadItempage(search, 0)">
+                            <i class="glyphicon glyphicon-search" ></i>
+                        </button>
+                    </span>
+                </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            Kanan
+
+        <div class="col-lg-4" style="background: #269abc">
+
         </div>
+
     </div>
 </div>
 

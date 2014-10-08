@@ -6,8 +6,8 @@
 
 package com.pos.web;
 
-import com.pos.dao.ItemKategoriDao;
-import com.pos.model.ItemKategori;
+import com.pos.dao.ItemDao;
+import com.pos.model.Item;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -31,69 +31,71 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/master")
-public class MasterItemKategoriCtrl {
+public class MasterItemCtrl {
     @Autowired
-    ItemKategoriDao itemKategoriDao;
-    private Logger logger=LoggerFactory.getLogger(MasterItemKategoriCtrl.class);
+    ItemDao itemDao;
+    private Logger logger=LoggerFactory.getLogger(MasterItemCtrl.class);
     
-    @RequestMapping(value = "/item-kategori", method = RequestMethod.GET)
+    @RequestMapping(value = "/item", method = RequestMethod.GET)
     @ResponseBody
-    public Page<ItemKategori> listAll(
+    public Page<Item> listAll(
             @RequestParam(required = false) String search, 
             Pageable pageable, 
             HttpServletResponse response){
         PageRequest pr = new PageRequest(pageable.getPageNumber(), pageable.getPageSize(), Sort.Direction.ASC, "nama");
         logger.debug("pageNumber [{}], pageSize: [{}]", pageable.getPageNumber(), pageable.getPageSize());
-        return itemKategoriDao.findAll(pr);
+        return itemDao.findAll(pr);
     }
     
-    @RequestMapping(value = "/item-kategori/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/item/get/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ItemKategori findOne(@PathVariable Integer id, 
+    public Item findOne(@PathVariable String id, 
             HttpServletResponse response){
-        return itemKategoriDao.findOne(id);
+        return itemDao.findOne(id);
     }
-    
-    @RequestMapping(value = "/item-kategori/cek-nama/{nama}", method = RequestMethod.GET)
+    @RequestMapping(value = "/item/cek-nama/{nama}", method = RequestMethod.GET)
     @ResponseBody
-    public ItemKategori cekNama(@PathVariable String nama, 
+    public Item cekNama(@PathVariable String nama, 
             HttpServletResponse response){
-        return itemKategoriDao.findByNama(nama);
+        return itemDao.findByNama(nama);
     }
-    
-    @RequestMapping(value = "/item-kategori/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/item/{nama}", method = RequestMethod.GET)
     @ResponseBody
-    public Iterable<ItemKategori> findAll(HttpServletResponse response){
-        return itemKategoriDao.findAll();
-    }
-    
-    @RequestMapping(value = "/item-kategori/{nama}", method = RequestMethod.GET)
-    @ResponseBody
-    public Page<ItemKategori> findByName(@PathVariable String nama, 
+    public Page<Item> findByName(@PathVariable String nama, 
             Pageable pageable, 
             HttpServletResponse response){
-        return itemKategoriDao.filter("%"+nama+"%", pageable);
+        return itemDao.filter("%"+nama+"%", pageable);
     }
-    
-    @RequestMapping(value = "/item-kategori", method = RequestMethod.POST)
-    public void save(@RequestBody ItemKategori ik, 
+    @RequestMapping(value = "/item/all", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Item> findAll(@PathVariable String nama, 
             HttpServletResponse response){
-        itemKategoriDao.save(ik);
+        return itemDao.filterAll("%"+nama+"%");
     }
     
-    @RequestMapping(value = "/item-kategori", method = RequestMethod.PUT)
-    public void update(@RequestBody ItemKategori ik, 
+    
+    @RequestMapping(value = "/item", method = RequestMethod.POST)
+    public void save(@RequestBody Item ik, 
             HttpServletResponse response){
-        itemKategoriDao.save(ik);
+        itemDao.save(ik);
     }
     
-    
-    @RequestMapping(value = "/item-kategori/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable Integer id, 
+    @RequestMapping(value = "/item", method = RequestMethod.PUT)
+    public void update(@RequestBody Item ik, 
             HttpServletResponse response){
-        itemKategoriDao.delete(id);
+        itemDao.save(ik);
     }
     
     
+    @RequestMapping(value = "/item/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable String id, 
+            HttpServletResponse response){
+        itemDao.delete(id);
+    }
+    
+    @RequestMapping(value = "/item/count", method = RequestMethod.GET)
+    public Long count(HttpServletResponse response){
+        return itemDao.count();
+    }
     
 }

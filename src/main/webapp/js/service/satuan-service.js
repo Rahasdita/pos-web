@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('posApp')
-  .factory('ItemKategoriService', function ($http, $resource) {
-    var url='master/item-kategori';
+  .factory('SatuanService', function ($http, $resource) {
+    var url='master/satuan';
     return {
         itemKategori: $resource(url+'/:search', {}, {
                 queryPage: {method:'GET', isArray: false}

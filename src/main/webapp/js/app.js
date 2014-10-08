@@ -16,9 +16,17 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/master/item', {
+        templateUrl: 'views/master/item.html',
+        controller: 'ItemCtrl'
+      })
       .when('/master/item-kategori', {
         templateUrl: 'views/master/item-kategori.html',
         controller: 'ItemKategoriCtrl'
+      })
+      .when('/master/satuan', {
+        templateUrl: 'views/master/satuan.html',
+        controller: 'SatuanCtrl'
       })
       .when('/master/kota', {
         templateUrl: 'views/master/kota.html',
@@ -41,20 +49,20 @@ angular
           templateUrl: 'views/404.html',
       });
   })
-  .directive('onEnter',function() {
-
-  var linkFn = function(scope,element,attrs) {
-    element.bind("keypress", function(event) {
-      if(event.which === 13) {
-        scope.$apply(function() {
-      scope.$eval(attrs.onEnter);
-        });
-        event.preventDefault();
-      }
-    });
-  };
-
-  return {
-    link:linkFn
-  };
-});
+//  .directive('onEnter',function() {
+//
+//  var linkFn = function(scope,element,attrs) {
+//    element.bind("keypress", function(event) {
+//      if(event.which === 13) {
+//        scope.$apply(function() {
+//      scope.$eval(attrs.onEnter);
+//        });
+//        event.preventDefault();
+//      }
+//    });
+//  };
+//
+//  return {
+//    link:linkFn
+//  };
+//});

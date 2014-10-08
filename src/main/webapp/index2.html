@@ -13,7 +13,7 @@ and open the template in the editor.
         <title>POS - Aplikasi Penjualan & Inventori</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/app.css" rel="stylesheet">
-
+        
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         <script src="lib/ie-emulation-modes-warning.js"></script>
@@ -41,7 +41,6 @@ and open the template in the editor.
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#/master/item-kategori">Item Kategori</a></li>
                                     <li><a href="#/master/item">Item</a></li>
-                                    <li><a href="#/master/satuan">Satuan</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#/master/relasi">Relasi</a></li>
                                     <li class="divider"></li>
@@ -77,7 +76,7 @@ and open the template in the editor.
                                 </ul>
                             </li>
                             <li><a href="#/about">About</a></li>
-
+                            
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -85,37 +84,34 @@ and open the template in the editor.
 
         </div>
         <div ng-view="" class="container"></div>
+        
         <script src="lib/jquery.min.js"></script>
         <script src="lib/bootstrap.min.js"></script>
-         <!--IE10 viewport hack for Surface/desktop Windows 8 bug--> 
-        <script src="lib/ie10-viewport-bug-workaround.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!--<script src="lib/ie10-viewport-bug-workaround.js"></script>-->
         <script src="lib/angular/angular.js"></script>
         <!--<script src="lib/json3/lib/json3.js"></script>-->
         <script src="lib/angular-resource/angular-resource.js"></script>
-        <script src="lib/angular-cookies/angular-cookies.js"></script>
-        <script src="lib/angular-sanitize/angular-sanitize.js"></script>
-        <script src="lib/angular-animate/angular-animate.js"></script>
-        <script src="lib/angular-touch/angular-touch.js"></script>
+        <!--<script src="lib/angular-cookies/angular-cookies.js"></script>-->
+        <!--<script src="lib/angular-sanitize/angular-sanitize.js"></script>-->
+        <!--<script src="lib/angular-animate/angular-animate.js"></script>-->
+        <!--<script src="lib/angular-touch/angular-touch.js"></script>-->
         <script src="lib/angular-route/angular-route.js"></script>
         <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="lib/bootbox.js" type="text/javascript"></script>
+        <!--<script src="lib/bootbox.js" type="text/javascript"></script>-->
         <script src="js/date-format.js"></script>
-
+        
         <!--        Ini script kita-->
         <script src="js/app.js"></script>
         <script src="js/controller/main.js"></script>
         <script src="js/controller/about.js"></script>
         <script src="js/controller/reportIpd.js"></script>
-        <script src="js/controller/item.js"></script>
         <script src="js/controller/item-kategori.js"></script>
-        <script src="js/controller/satuan.js"></script>
         <script src="js/controller/kota.js"></script>
         <script src="js/controller/ar-inv.js"></script>
-
+        
         <!--        service-->
-        <script src="js/service/item-service.js"></script>
         <script src="js/service/item-kategori-service.js"></script>
-        <script src="js/service/satuan-service.js"></script>
         <script src="js/service/kota-service.js"></script>
         <script src="js/service/ar-inv-service.js"></script>
     </body>
