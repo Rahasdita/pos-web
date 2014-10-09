@@ -12,5 +12,6 @@ package com.pos.model;
  */
 public enum ItemType {
     INVENTORY, //Jika termasuk kategori persediaan
-    NON_INVENTORY// Non persediaan seperti kresek, tali rafia dll.
+    NON_INVENTORY,// Non persediaan seperti kresek, tali rafia dll.
+    JASA
 }

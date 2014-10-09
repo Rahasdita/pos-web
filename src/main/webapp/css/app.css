@@ -8,6 +8,14 @@ and open the template in the editor.
     Author     : faheem
 */
 body {
-  min-height: 2000px;
-  padding-top: 70px;
+    min-height: 2000px;
+    padding-top: 70px;
 }
+
+.modal.modal-wide .modal-dialog {
+    width: 90%;
+}
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+#formModal .modal-body p { margin-bottom: 900px }

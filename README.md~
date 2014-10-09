@@ -9,4 +9,3 @@ Step:
 5. Jalankan dengan perintah **mvn clean package tomcat:run -DskipTests**
 6. Program bisa dibuka di web browser dengan alamat: **http://localhost:10000/pos-web**
 
-

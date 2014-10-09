@@ -15,7 +15,8 @@ angular.module('posApp')
                 currentPage: 1,
                 totalItems: 0
             };
-            $scope.itemKategori=
+            $scope.itemType=['INVENTORY', 'NON_INVENTORY', 'JASA'];
+            
 //            document.getElementById('search').focus();
             $scope.reloadData = function() {
                 ItemKategoriService.findAll().success(function(data){
@@ -56,10 +57,10 @@ angular.module('posApp')
 
             $scope.clear = function() {
                 $scope.formTitle="Tambah Item";
-                $scope.currentRecord = null;
+                $scope.currentRecord = {};
                 $scope.original = null;
                 $scope.isNameExists = false;
-
+                $scope.currentRecord.active=true;
                 $scope.reloadData();
                 
             };
@@ -76,7 +77,8 @@ angular.module('posApp')
             };
 
             $scope.save = function() {
-                if($scope.currentRecord.nama.equals('')){
+                console.log('save', $scope.currentRecord);
+                if($scope.currentRecord.nama===''){
                     bootbox.alert('Silahkan masukkan nama barang terlebih dulu!');
                     $('#nama').focus();
                     return;
@@ -86,6 +88,7 @@ angular.module('posApp')
                         $scope.isNameExists = true;
                         return;
                     } else {
+                        
                         ItemService.save($scope.currentRecord).success(function() {
                             $('#formModal').modal('hide');
                             bootbox.alert('Simpan item sukses ');

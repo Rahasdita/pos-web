@@ -51,9 +51,9 @@ angular.module('posApp')
                 $scope.currentRecord = null;
                 $scope.original = null;
                 $scope.isNameExists = false;
-
-                $scope.reloadData();
                 
+                $scope.reloadData();
+                $('#nama').focus();
             };
 
             
